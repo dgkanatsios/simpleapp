@@ -13,7 +13,7 @@ app.get('/', (req, res) => {
          req.connection.remoteAddress || 
          req.socket.remoteAddress || 
          req.connection.socket.remoteAddress;
-  console.log(`IP: ${ip} on ${new Date().toLocaleString()}`);
+  console.log(`IP: ${ip} on ${new Date().toISOString()}`);
   res.send('Hello world\n');
 });
 
