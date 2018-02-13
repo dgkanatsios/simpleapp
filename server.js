@@ -9,11 +9,16 @@ const HOST = '0.0.0.0';
 // App
 const app = express();
 app.get('/', (req, res) => {
-  const ip = req.headers['x-forwarded-for'].split(',').pop() || 
-         req.connection.remoteAddress || 
-         req.socket.remoteAddress || 
-         req.connection.socket.remoteAddress;
-  console.log(`IP: ${ip} on ${new Date().toISOString()}`);
+
+  let ip;
+
+  if (req.headers['x-forwarded-for'])
+    ip = req.headers['x-forwarded-for'].split(',').pop();
+  else ip = req.connection.remoteAddress ||
+    req.socket.remoteAddress ||
+    req.connection.socket.remoteAddress;
+
+    console.log(`IP: ${ip} on ${new Date().toISOString()}`);
   res.send('Hello world\n');
 });
 
