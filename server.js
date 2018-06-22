@@ -1,9 +1,10 @@
 'use strict';
 
 const express = require('express');
+const os = require('os');
 
 // Constants
-const PORT = 80;
+const PORT = 8080;
 const HOST = '0.0.0.0';
 
 // App
@@ -13,13 +14,13 @@ app.get('/', (req, res) => {
   let ip;
 
   if (req.headers['x-forwarded-for'])
-    ip = req.headers['x-forwarded-for'].split(',').pop();
+    ip = req.headers['x-forwarded-for'].split(",").pop();
   else ip = req.connection.remoteAddress ||
     req.socket.remoteAddress ||
-    req.connection.socket.remoteAddress;
+    req.connection.remoteAddress;
 
-    console.log(`IP: ${ip} on ${new Date().toISOString()}`);
-  res.send('Hello world\n');
+  console.log(`IP: ${ip} on ${new Date().toISOString()}`);
+  res.send(`Hello world from ${os.hostname()}\n`);
 });
 
 app.listen(PORT, HOST);
