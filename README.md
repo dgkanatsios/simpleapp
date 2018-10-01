@@ -5,4 +5,4 @@
 [![](https://images.microbadger.com/badges/version/dgkanatsios/simpleapp.svg)](https://microbadger.com/images/dgkanatsios/simpleapp "Get your own version badge on microbadger.com")
 
 # simpleapp
-A simple Node.js app in a Docker container that listens to port 8080 and displays 'Hello world'. Serves no other purpose other than demos.
+A simple Node.js app in a Docker container that listens to port 8080 and displays 'Hello world' as well as the hostname. Serves no other purpose other than demos.
