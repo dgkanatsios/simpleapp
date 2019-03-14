@@ -20,7 +20,7 @@ app.get('/', (req, res) => {
     req.connection.remoteAddress;
 
   console.log(`IP: ${ip} on ${new Date().toISOString()}`);
-  res.send(`Hello world from ${os.hostname()}\n`);
+  res.send(`Hello world from ${os.hostname()} and version 1\n`);
 });
 
 app.listen(PORT, HOST);
