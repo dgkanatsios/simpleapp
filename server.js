@@ -7,6 +7,8 @@ const os = require('os');
 const PORT = process.env.PORT || 8080;
 const HOST = '0.0.0.0';
 
+const version = '1.0';
+
 // App
 const app = express();
 app.get('/', (req, res) => {
@@ -20,8 +22,8 @@ app.get('/', (req, res) => {
     req.connection.remoteAddress;
 
   console.log(`IP: ${ip} on ${new Date().toISOString()}`);
-  res.send(`Hello world from ${os.hostname()} and version 1\n`);
+  res.send(`Hello world from ${os.hostname()} and version ${version}\n`);
 });
 
 app.listen(PORT, HOST);
-console.log(`Running on http://${HOST}:${PORT}`);
+console.log(`Running version ${version} on http://${HOST}:${PORT}`);
