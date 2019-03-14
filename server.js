@@ -7,7 +7,7 @@ const os = require('os');
 const PORT = process.env.PORT || 8080;
 const HOST = '0.0.0.0';
 
-const version = '1.0';
+const version = '2.0';
 
 // App
 const app = express();
